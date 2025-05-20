@@ -5,14 +5,14 @@ stages:
     deps:
     - path: src/get_data.py
       hash: md5
-      md5: 5ac94a470144440aeadc98078aa1751a
-      size: 522
+      md5: 0532290a2caf06c36adf5c187dfae5b6
+      size: 622
       isexec: true
     outs:
     - path: smsspamcollection
       hash: md5
-      md5: 5a84bb806c75cbc704c9fb17e1ba8e44.dir
-      size: 604940
+      md5: 6a96da26fe9ed5d450b58dd97347334e.dir
+      size: 687902
       nfiles: 3
   preprocess:
     cmd: "mkdir -p output\npython src/text_preprocessing.py\n"
