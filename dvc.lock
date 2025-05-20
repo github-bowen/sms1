@@ -25,25 +25,30 @@ stages:
     outs:
     - path: output/preprocessed_data.joblib
       hash: md5
-      md5: aaa20aff1800afac69c88f07c547f67f
-      size: 251348
+      md5: de91a02fc19c11a3253c8111839d4e30
+      size: 495124
       isexec: true
     - path: output/preprocessor.joblib
       hash: md5
-      md5: 83a6cbde454b42ee4be7cbfe54ebd638
-      size: 128457
+      md5: ad7928e20f2933b6c7368d094654b6f5
+      size: 192137
       isexec: true
   train:
     cmd: python src/text_classification.py
     deps:
     - path: src/text_classification.py
       hash: md5
-      md5: ea5cea56efbcfb732c31873c80d5d462
-      size: 3290
+      md5: d3cf7d3b74e5de3daf716f03dd81e46b
+      size: 3380
       isexec: true
     outs:
+    - path: output/metrics.json
+      hash: md5
+      md5: 59361981cc8b457b75baf432c278aa1a
+      size: 302
+      isexec: true
     - path: output/model.joblib
       hash: md5
-      md5: 04ae3181e5c86840d25d82d6c72cfb40
-      size: 10521
+      md5: 6157b64280f34a90970f8924be574928
+      size: 15001
       isexec: true
