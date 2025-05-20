@@ -18,5 +18,7 @@ stages:
     cmd: python src/text_classification.py
     deps:
     - src/text_classification.py
+    metrics:
+    - output/metrics.json
     outs:
     - output/model.joblib

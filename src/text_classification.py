@@ -14,6 +14,7 @@ from joblib import dump, load
 import matplotlib
 import matplotlib.pyplot as plt
 from text_preprocessing import _load_data
+import json
 
 #matplotlib.use('TkAgg')
 pd.set_option('display.max_colwidth', None)
@@ -23,7 +24,7 @@ def my_train_test_split(*datasets):
     '''
     Split dataset into training and test sets. We use a 70/30 split.
     '''
-    return train_test_split(*datasets, test_size=0.3, random_state=101)
+    return train_test_split(*datasets, test_size=0.3, random_state=100)
 
 def train_classifier(classifier, X_train, y_train):
     classifier.fit(X_train, y_train)
@@ -80,6 +81,7 @@ def main():
     print('\n')
     print(accuracy)
     print('\n')
+    json.dump(accuracy.to_dict(), open('output/metrics.json', 'w'), indent=4)
 
     #plot accuracy scores in a bar plot
     accuracy.plot(kind='bar', ylim=(0.85, 1.0), edgecolor='black', figsize=(10, 5))
